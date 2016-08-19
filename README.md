@@ -1,1 +1,1 @@
-# DS_coursera
+Programming assignments from 'R programming' course on Coursera
