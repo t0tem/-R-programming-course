@@ -1,1 +1,1 @@
-Programming assignments from 'R programming' course on Coursera
+Programming assignments from 'Data Science' specialization on Coursera.org
