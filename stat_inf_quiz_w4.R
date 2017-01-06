@@ -25,22 +25,6 @@ x <- 1 / 100 * 1787
 poisson.test(10, r = 1/100*1787, alternative = "less" )$p.value
 
 #5
-n1 <- n2 <- 9
-mu2 <- -3
-mu1 <- 1
-s2 <- 1.5
-s1 <- 1.8
-
-
-sp <- ((n2 - 1) * s2^2 + (n1 - 1) * s1^2) / (n2 + n1 -2)
-
-md <- mu2 - mu1
-df <- n2 + n1 -2
-
-conf <- md + c(-1, 1) + qt(0.975, df = df) * sp * sqrt(1/n1 + 1/n2)
-pt(conf[2], df = df, lower.tail = FALSE) * 2
-
-#########################################################
 
 n1 <- n2 <- 9
 x1 <- -3 ##treated
@@ -53,40 +37,21 @@ ts <- (x1 - x2)/(s * sqrt(1/n1 + 1/n2))
 
 2 * pt(ts, n1 + n2 - 2)
 
+#6
+qt(.95, 8)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#######################
 
 
 
 #7
-pnorm(1.645 * 0.004, mean = 0.01, sd = 0.004, lower.tail = FALSE)
+power.t.test(n = 100, delta = 0.01, sd = 0.04, type = "one.sample", alt = "one.sided")$power
+pnorm(qnorm(0.95) * (0.04/sqrt(100)), mean = 0.01, sd = 0.04/sqrt(100), lower.tail = FALSE)
+
+#8
+power.t.test(power = 0.9, delta = 0.01, sd = 0.04, type = "one.sample", alt = "one.sided")$n
+
+#9
+
+
