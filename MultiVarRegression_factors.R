@@ -68,5 +68,30 @@ g1 = g
 g1 = g1 + geom_abline(intercept = coef(fit)[1], slope = coef(fit)[2], size = 2)
 g1
 
+#Parallel lines 
+summary(lm(Fertility ~ Agriculture + factor(CatholicBin), data = swiss))$coef
+
+fit = lm(Fertility ~ Agriculture + factor(CatholicBin), data = swiss)
+g1 = g
+g1 = g1 + geom_abline(intercept = coef(fit)[1], slope = coef(fit)[2], size = 2)
+g1 = g1 + geom_abline(intercept = coef(fit)[1] + coef(fit)[3], slope = coef(fit)[2], size = 2)
+g1
+
+
+
+
+# Lines with different slopes and intercepts
+
+summary(lm(Fertility ~ Agriculture * factor(CatholicBin), data = swiss))$coef
+
+fit = lm(Fertility ~ Agriculture * factor(CatholicBin), data = swiss)
+g1 = g
+g1 = g1 + geom_abline(intercept = coef(fit)[1], slope = coef(fit)[2], size = 2)
+g1 = g1 + geom_abline(intercept = coef(fit)[1] + coef(fit)[3], 
+                      slope = coef(fit)[2] + coef(fit)[4], size = 2)
+g1
+
+
+
 
 
