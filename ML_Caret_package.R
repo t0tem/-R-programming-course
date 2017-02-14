@@ -13,7 +13,7 @@ table(testing$type)/dim(testing)[1]
 
 set.seed(32343)
 modelFit <- train(type ~.,data=training, method="glm")
-summary(modelFit)$coef
+modelFit
 modelFit$finalModel
 
 predictions <- predict(modelFit,newdata=testing)
