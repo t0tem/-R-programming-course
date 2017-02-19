@@ -32,7 +32,9 @@ preProc <- preProcess(log10(training[,-58]+1),method="pca",pcaComp=2)
 #<- log is useful against outliers and skewed data
 
 trainPC <- predict(preProc,log10(training[,-58]+1))
-modelFit <- train(training$type ~ .,method="glm",data=trainPC) #doesn't work
+
+# modelFit <- train(training$type ~ .,method="glm",data=trainPC) #doesn't work
+
 modelFit <- train(x = trainPC, y = training$type,method="glm") # works
 modelFit
 

@@ -52,3 +52,11 @@ g2 <- ggplot (data = mtcars, aes (x = mpg)) +
     theme (plot.title = element_text (size = 10, face = "bold"))
 
 grid.arrange (grobs = list (g1,g2), ncol = 2)
+
+
+
+
+# HISTOGRAM
+g <- ggplot(data.frame(dat <- rnorm(1000)), aes(x = dat)) + 
+    geom_histogram(binwidth = 0.5, color = "white", fill = "steelblue1")
+g
